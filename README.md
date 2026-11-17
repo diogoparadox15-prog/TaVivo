@@ -21,10 +21,13 @@
 > **Terá uma tempestade solar e desligará toda comunicação?** Não sei.  
 > **Alguém vai explodir armamento químico ou atômico?** Também não sei.  
 > **Extraterrestre ou zumbi?** Vai da crença de cada um.  
-> **E se o seu celular perder sinal bem na hora que você mais precisa?** Pode acontecer hoje mesmo.  
+> **E se o seu celular perder sinal bem na hora em que você mais precisa?** Pode acontecer hoje mesmo.  
 > **E se você ficar sem o seu ChatGPT para te responder?** É aí que a maioria trava.  
->
-> **Mas o mínimo que você precisa ter pra sobreviver é um pouco de *brio* e *ferramenta* para diferenciar você de uma ameba.**
+
+Não é preciso imaginar cenários distantes: recentemente já vimos **sistemas bancários nos EUA e grandes portais de notícias saírem do ar**, **falhas em sistemas de aviação** paralisando voos, **quedas em sistemas meteorológicos** e, no Brasil, instabilidades simultâneas no **Gov.br, no Pix e em operadoras**. A infraestrutura moderna depende de nuvem, energia e rede — e falha o tempo todo.
+
+> [!IMPORTANT]
+> **O mínimo que você precisa ter para sobreviver é um pouco de *brio* e *ferramentas* para diferenciar você de uma ameba.**
 >
 > Pensando nisso, desenvolvi o **TaVivo**: uma I.A. 100% offline que não depende de internet nem de nuvem, projetada para rodar em computadores simples (a partir de **8 GB de RAM**) e ajudar você a sobreviver, agir com segurança e manter a cabeça no lugar quando tudo lá fora falhar.
 
