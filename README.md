@@ -71,11 +71,11 @@ Se esta ferramenta offline puder ajudar você ou sua família em uma hora difíc
 | **Segurança & Triagem** | Trava Visual + Cartão Vermelho + Resumo SAMU | Bloqueia chutes perigosos e gera ficha clínica rápida |
 
 <details>
-<summary><strong>📚 Ver catálogo completo de áreas cobertas pelos 209 manuais</strong></summary>
+<summary><strong>📚 Ver áreas cobertas pelos Manuais Reais de Sobrevivência</strong></summary>
 
 - **Primeiros Socorros & Medicina**: hemorragias, torniquete, RCP, engasgo, queimaduras, parto de emergência, convulsões/PLS, pneumotórax (curativo de 3 pontas), sinais vitais e pressão arterial sem aparelho, anatomia vascular superficial (braço/perna), intoxicação química, lavagem ocular, doenças crônicas sem remédio (hipertensão, diabetes, epilepsia) e cuidados domésticos simples.
 - **Farmacologia Brasil (Comerciais + Genéricos)**: resumos de bula, posologia adulto usual e contraindicações (Analgésicos, Antibióticos, Psiquiatria, Cardiologia, Endocrinologia, Gástricos como Inzelm/Izelm/Omeprazol, Dermatologia e Oftalmologia) + leitura de caixas de remédio por foto.
-- **Saúde Mental & Psicologia**: **TCC**, Guia OMS/OPAS (*Faça o que importa em tempos de estresse*: *Grounding*, Desfusão, RPD, Exposição Gradual), regulação fisiológica e triagem baseada em **DSM-5-TR** e **CID-11**.
+- **Psicologia & Controle Emocional em Crises**: técnicas práticas de psicologia para controle da ansiedade, pânico e estresse, enfrentamento de situações de crise (base OMS/OPAS e terapia cognitiva), regulação da respiração, acolhimento de crianças/idosos e triagem em saúde mental.
 - **Sobrevivência, Água & Alimentos**: filtração, método SODIS, alambique solar, cloração, saneamento/latrina, conservação de alimentos sem geladeira (salga, secagem, pote Zeer), caça passiva, pesca, limpeza e preparo seguro de fauna silvestre (peixes, aves, capivara, gambá, tatu).
 - **Engenharia, Mecânica, Rádio & Legislação**: roldanas/alavancas, eletricidade/baterias 12V, motores (gasolina, etanol, carburador, injeção, câmbio, diesel e carros elétricos/híbridos), rádio PX/VHF/SW, Código Q, Morse, LoRa/Meshtastic, apps offline (BitChat, Briar), CF/88 (Estado de Defesa, Estado de Sítio, GLO) e Lei Marcial.
 - **Bíblia, Filosofia & Cultura**: **Bíblia Sagrada Católica completa** (Ave Maria — 73 livros indexados por capítulo), George Orwell (*1984* e *A Revolução dos Bichos*), Olavo de Carvalho, Napoleon Hill, *O Caibalion*, Estoicismo, Xadrez, Damas e jogos sem internet.
