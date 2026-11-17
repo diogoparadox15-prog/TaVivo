@@ -10,7 +10,7 @@
 ![Sistemas](https://img.shields.io/badge/SO-Windows%20%7C%20Linux%20%7C%20macOS-334155?style=for-the-badge)
 ![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-f59e0b?style=for-the-badge)
 
-[Sobre](#-sobre-o-tavivo) · [O que vem no Kit](#-o-que-o-pacote-carrega) · [Como Iniciar](#-sistemas-suportados-e-como-iniciar-1-clique) · [Arquitetura](#-portas-e-arquitetura) · [Pague um Café (BTC)](#-pague-um-café-doação-em-bitcoin)
+[Sobre](#-sobre-o-tavivo) · [O que vem no Kit](#-o-que-o-pacote-carrega) · [Como Iniciar](#-sistemas-suportados-e-como-iniciar-1-clique) · [Como Acessar](#-como-acessar) · [Pague um Café (BTC)](#-pague-um-café-doação-em-bitcoin)
 
 </div>
 
@@ -117,10 +117,11 @@ chmod +x tavivo_mac.sh bin/llama-server
 
 ---
 
-## 🔌 Portas e Arquitetura
+## 🔌 Como Acessar
 
-- **Motor de IA (`llama-server`)**: `http://127.0.0.1:9931`
-- **Interface Web (`TaVivo`)**: `http://127.0.0.1:9876`
+O navegador abre automaticamente ao iniciar, mas caso feche a aba, acesse:
+
+- **Interface Web (TaVivo)**: `http://127.0.0.1:9876` (ou `http://localhost:9876`)
 
 ---
 
