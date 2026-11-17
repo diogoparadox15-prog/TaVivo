@@ -41,7 +41,7 @@
 
 ## 🧭 Sobre o TaVivo
 
-O **TaVivo** é um kit portátil de inteligência artificial de emergência, **100% autônomo e offline**, projetado para rodar localmente em notebooks e PCs a partir de **8 GB de RAM** (sem internet, sem nuvem, sem torres de celular) — cabendo com folga (~**1.4 GB**) em um pendrive de 4 GB.
+O **TaVivo** é um kit portátil de inteligência artificial de emergência, **100% autônomo e offline**, projetado para rodar localmente em notebooks e PCs a partir de **8 GB de RAM** (sem internet, sem nuvem, sem torres de celular) — cabendo com folga em um pendrive de **4 GB**.
 
 Comecei focando no Brasil (manuais, bulas comerciais e genéricas da ANVISA/SUS e os **5.571 municípios do IBGE**), mas o motor **LFM3-Omni-2B** também entende e responde em **Português, Inglês, Espanhol, Francês, Alemão, Italiano, Japonês, Coreano, Chinês e Árabe** — é só pedir. E, como é um projeto vivo, você pode sugerir melhorias e novos manuais.
 
