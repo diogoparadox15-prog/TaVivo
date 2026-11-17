@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaVivo — Terminal Offline</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <svg class="logo-svg" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+        <rect x="2" y="2" width="32" height="32" rx="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 17v10H8.5A1.5 1.5 0 0 1 7 25.5v-7A1.5 1.5 0 0 1 8.5 17H12zm3 10V15.6l3.4-6.4a1.8 1.8 0 0 1 3.3.9v4.4h5.1a2 2 0 0 1 1.97 2.36l-1.2 7.2A2.2 2.2 0 0 1 25.4 27H15z" fill="var(--accent)"/>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">TaVivo</span>
+        <span class="brand-sub">I.A. de Sobrevivência</span>
+      </div>
+    </div>
+
+    <div id="status-bar" class="status-bar" aria-live="polite">
+      <span id="status-ai">🔴 Motor IA (9931)</span>
+      <span class="sep">|</span>
+      <span id="status-lib">🔴 Biblioteca</span>
+    </div>
+
+    <nav class="controls">
+      <button id="donate-btn" class="ghost accent-outline" type="button" title="Apoiar o projeto TaVivo">Doe</button>
+      <button id="new-chat-btn" class="ghost" type="button" title="Iniciar nova conversa">Nova Conversa</button>
+      <button id="theme-btn" class="ghost" type="button" title="Alternar tema claro/escuro">Tema</button>
+      <button id="about-btn" class="ghost" type="button" title="Sobre o TaVivo e licenças">Sobre &amp; Licenças</button>
+    </nav>
+  </header>
+
+  <main id="layout" class="layout">
+    <section class="chat" aria-label="Terminal Offline">
+      <div class="watermark" aria-hidden="true">TaVivo</div>
+
+      <div id="messages" class="messages">
+        <div id="welcome-inline" class="welcome-inline">
+          <h1>I.A. de Sobrevivência</h1>
+          <p class="subtitle">
+            Consulte manuais médicos, primeiros socorros, purificação de água e procedimentos de emergência
+            100% offline. Respostas baseadas em Manuais Reais de Sobrevivência.
+          </p>
+          <div class="examples">
+            <button type="button" class="example">Como purificar água barrenta ou contaminada sem filtro comercial?</button>
+            <button type="button" class="example">Quais os primeiros socorros para queimadura de segundo grau?</button>
+            <button type="button" class="example">Faltou energia: por quanto tempo os alimentos da geladeira são seguros?</button>
+            <button type="button" class="example">Como estancar uma hemorragia grave em um membro?</button>
+          </div>
+        </div>
+      </div>
+
+      <form id="composer" class="composer">
+        <div id="image-preview-strip" class="image-preview-strip" hidden></div>
+        <div class="composer-box">
+          <textarea id="input" rows="2" placeholder="Descreva a emergência ou faça uma pergunta..." aria-label="Sua pergunta"></textarea>
+          <div class="composer-actions">
+            <div class="media-actions">
+              <input id="image-input" type="file" accept="image/*" hidden>
+              <button id="attach-btn" class="ghost" type="button" title="Enviar foto de ferimento, rótulo ou planta">📎 Foto</button>
+              <button id="camera-btn" class="ghost" type="button" title="Capturar foto pela câmera">📷 Câmera</button>
+            </div>
+            <button id="send-btn" class="primary" type="submit">Enviar</button>
+          </div>
+        </div>
+        <p class="footnote">
+          A IA pode cometer erros. Confira sempre as fontes citadas. · Terminal Offline · <strong>Construído por Capitain Of Cruzades.</strong>
+        </p>
+      </form>
+    </section>
+
+    <aside id="reader" class="reader" hidden aria-label="Leitor da Biblioteca Offline">
+      <div class="reader-head">
+        <form id="search-form" class="search-form" role="search">
+          <input id="search-input" type="search" placeholder="Buscar na biblioteca offline..." aria-label="Buscar na biblioteca">
+          <button class="ghost" type="submit">Buscar</button>
+        </form>
+        <button id="close-reader" class="ghost icon" type="button" aria-label="Fechar leitor">✕</button>
+      </div>
+      <div id="reader-body" class="reader-body"></div>
+    </aside>
+  </main>
+
+  <!-- Pop-up inicial de acolhimento -->
+  <dialog id="welcome-modal" class="dialog modal-welcome" aria-labelledby="welcome-modal-title">
+    <div class="modal-logo-wrap">
+      <svg class="logo-svg large" viewBox="0 0 36 36" width="48" height="48" aria-hidden="true">
+        <rect x="2" y="2" width="32" height="32" rx="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 17v10H8.5A1.5 1.5 0 0 1 7 25.5v-7A1.5 1.5 0 0 1 8.5 17H12zm3 10V15.6l3.4-6.4a1.8 1.8 0 0 1 3.3.9v4.4h5.1a2 2 0 0 1 1.97 2.36l-1.2 7.2A2.2 2.2 0 0 1 25.4 27H15z" fill="var(--accent)"/>
+      </svg>
+      <div>
+        <h2 id="welcome-modal-title">TaVivo — I.A. de Sobrevivência</h2>
+        <span class="badge-offline">100% Autônomo &amp; Sem Internet</span>
+      </div>
+    </div>
+
+    <div class="verses-box">
+      <blockquote>
+        “Ainda que eu atravesse o vale escuro, nada temerei, pois estais comigo.”
+        <cite>(Salmo 22/23, 4)</cite>
+      </blockquote>
+      <blockquote>
+        “Alegrai-vos na esperança, sede pacientes na tribulação e perseverai na oração.”
+        <cite>(Romanos 12, 12)</cite>
+      </blockquote>
+    </div>
+
+    <p class="modal-desc">
+      Mantenha a calma. Este terminal opera inteiramente no seu dispositivo usando o motor local
+      (porta <strong>9931</strong>) e a biblioteca médica e de sobrevivência em Português do Brasil.
+    </p>
+    <p class="modal-warning">
+      <strong>Trava de Segurança:</strong> Nunca utilize identificação visual para consumir plantas, folhas ou fungos silvestres.
+      Em emergências graves, busque socorro médico assim que possível.
+    </p>
+
+    <div class="modal-footer">
+      <span class="credits-line">Construído por Capitain Of Cruzades.</span>
+      <button id="enter-terminal-btn" class="primary" type="button">Acessar Terminal Offline</button>
+    </div>
+  </dialog>
+
+  <!-- Modal Sobre & Licenças -->
+  <dialog id="about-modal" class="dialog wide" aria-labelledby="about-modal-title">
+    <div class="dialog-head">
+      <h2 id="about-modal-title">Sobre o TaVivo &amp; Licenças</h2>
+      <button id="close-about" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <p class="meta">
+      <strong>TaVivo</strong> é um kit de inteligência artificial de emergência, portátil e 100% offline,
+      projetado para operar em notebooks com 8GB de RAM durante apagões ou ausência de comunicações.
+    </p>
+    <div class="licenses-list">
+      <div class="license-item">
+        <strong>llama.cpp</strong>
+        <span>Licença MIT</span>
+      </div>
+      <div class="license-item">
+        <strong>LFM3-Omni (Liquid Foundation Models)</strong>
+        <span>Liquid Open License / Apache 2.0</span>
+      </div>
+      <div class="license-item">
+        <strong>Motor RAG TaVivo (SQLite FTS5 + GeoOffline)</strong>
+        <span>Licença MIT</span>
+      </div>
+      <div class="license-item">
+        <strong>Manuais e Enciclopédias (WikiMed, Wikilivros, Appropedia)</strong>
+        <span>Creative Commons CC BY-SA 3.0 / 4.0 e Domínio Público (FEMA, CDC, OMS)</span>
+      </div>
+      <div class="license-item">
+        <strong>Python Standalone (Windows)</strong>
+        <span>PSF License</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <span class="credits-line">Construído por Capitain Of Cruzades.</span>
+      <div class="media-actions">
+        <button id="open-legal-btn" class="ghost" type="button">Aviso Legal</button>
+        <button id="open-sources-btn" class="ghost" type="button">Fontes da Base</button>
+        <button id="ok-about" class="primary" type="button">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Aviso Legal -->
+  <dialog id="legal-modal" class="dialog wide" aria-labelledby="legal-modal-title">
+    <div class="dialog-head">
+      <h2 id="legal-modal-title">Aviso Legal &amp; Limitações da IA</h2>
+      <button id="close-legal" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <div id="legal-modal-body" class="licenses-list" style="max-height: 55vh; overflow-y: auto; padding: 12px 14px; white-space: pre-wrap; font-size: 13.5px;"></div>
+    <div class="modal-footer">
+      <span class="credits-line">Construído por Capitain Of Cruzades.</span>
+      <button id="ok-legal" class="primary" type="button">Fechar</button>
+    </div>
+  </dialog>
+
+  <!-- Modal Fontes & Livros da Base -->
+  <dialog id="sources-modal" class="dialog wide" aria-labelledby="sources-modal-title">
+    <div class="dialog-head">
+      <h2 id="sources-modal-title">Fontes, Livros e Manuais do TaVivo</h2>
+      <button id="close-sources" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <p class="meta">
+      Relação completa das obras, manuais técnicos, guias médicos e referências que embasam a biblioteca offline e o treinamento do TaVivo (clique em qualquer título para abrir):
+    </p>
+    <div id="sources-modal-body" class="licenses-list" style="max-height: 55vh; overflow-y: auto; padding: 10px 12px;"></div>
+    <div class="modal-footer">
+      <span class="credits-line">Construído por Capitain Of Cruzades.</span>
+      <button id="ok-sources" class="primary" type="button">Fechar</button>
+    </div>
+  </dialog>
+
+  <!-- Modal Câmera -->
+  <dialog id="camera-modal" class="dialog" aria-labelledby="camera-modal-title">
+    <div class="dialog-head">
+      <h2 id="camera-modal-title">Captura de Câmera Offline</h2>
+      <button id="close-camera" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <p class="meta">Posicione o objeto ou ferimento diante da câmera e clique em Capturar.</p>
+    <video id="camera-video" class="camera-video" autoplay playsinline></video>
+    <canvas id="camera-canvas" hidden></canvas>
+    <div class="modal-footer">
+      <span id="camera-error" class="meta danger"></span>
+      <button id="capture-btn" class="primary" type="button">Capturar Foto</button>
+    </div>
+  </dialog>
+
+  <!-- Modal Resumo Clínico para SAMU / Bombeiros -->
+  <dialog id="samu-modal" class="dialog wide" aria-labelledby="samu-modal-title">
+    <div class="dialog-head">
+      <h2 id="samu-modal-title">Resumo Clínico para SAMU 192 / Bombeiros 193</h2>
+      <button id="close-samu" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <p class="meta">Preencha os dados abaixo para mostrar ao médico ou ler pelo rádio/telefone:</p>
+    <div class="samu-grid">
+      <input id="samu-idade" type="text" placeholder="Idade (ex.: 34 anos / 8 meses)">
+      <input id="samu-peso" type="text" placeholder="Peso aprox. (ex.: 72 kg)">
+      <input id="samu-altura" type="text" placeholder="Altura aprox. (ex.: 1,75 m)">
+      <input id="samu-comorb" type="text" placeholder="Doenças/Alergias (ex.: hipertensão, diabetes)">
+      <input id="samu-meds" type="text" placeholder="Remédios tomados nas últimas 24h">
+      <input id="samu-hora" type="text" placeholder="Horário do início / picada / torniquete">
+    </div>
+    <textarea id="samu-preview" class="samu-preview" rows="8" readonly></textarea>
+    <div class="modal-footer">
+      <span class="credits-line">Construído por Capitain Of Cruzades.</span>
+      <div class="media-actions">
+        <button id="copy-samu-btn" class="primary" type="button">Copiar Resumo</button>
+        <button id="ok-samu" class="ghost" type="button">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal Doe / Apoie o Projeto -->
+  <dialog id="donate-modal" class="dialog" aria-labelledby="donate-modal-title">
+    <div class="dialog-head">
+      <h2 id="donate-modal-title">Apoie o TaVivo (Doação Bitcoin)</h2>
+      <button id="close-donate" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <div class="verses-box">
+      <blockquote>
+        “Dê cada um conforme o impulso do seu coração, sem tristeza nem constrangimento. Deus ama a quem dá com alegria.”
+        <cite>(2 Coríntios 9, 7)</cite>
+      </blockquote>
+      <blockquote>
+        “A alma generosa prosperará, e quem dá a beber também será saciado.”
+        <cite>(Provérbios 11, 25)</cite>
+      </blockquote>
+    </div>
+    <div class="donate-qr-wrap">
+      <img src="/static/doe_btc.png" alt="QR Code Bitcoin TaVivo" class="donate-qr">
+      <code id="btc-address" class="btc-address">bc1q4fwx7ml5casg3hanr8ep382kwvwzht7hqsl0r7</code>
+    </div>
+    <div class="modal-footer">
+      <span class="credits-line">Construído por Capitain Of Cruzades.</span>
+      <div class="media-actions">
+        <button id="copy-btc-btn" class="primary" type="button">Copiar Endereço</button>
+        <button id="ok-donate" class="ghost" type="button">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

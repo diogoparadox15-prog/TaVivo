@@ -1,0 +1,10 @@
+models/*.gguf
+bin/
+python/
+_staging_deps/
+dist/
+downloads/
+tavivo_hw.json
+*.log
+__pycache__/
+*.pyc

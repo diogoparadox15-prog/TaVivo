@@ -10,7 +10,7 @@
 ![Sistemas](https://img.shields.io/badge/SO-Windows%20%7C%20Linux%20%7C%20macOS-334155?style=for-the-badge)
 ![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-f59e0b?style=for-the-badge)
 
-[Sobre](#-sobre-o-tavivo) · [O que vem no Kit](#-o-que-o-pacote-carrega) · [Como Iniciar](#-sistemas-suportados-e-como-iniciar-1-clique) · [Como Acessar](#-como-acessar) · [Pague um Café (BTC)](#-pague-um-café-doação-em-bitcoin)
+[Sobre](#-sobre-o-tavivo) · [Baixar](#-baixar-última-versão-direto) · [O que vem no Kit](#-o-que-o-pacote-carrega) · [Como Iniciar](#-sistemas-suportados-e-como-iniciar-1-clique) · [Como Acessar](#-como-acessar) · [Pague um Café (BTC)](#-pague-um-café-doação-em-bitcoin)
 
 </div>
 
@@ -50,6 +50,20 @@ Comecei focando no Brasil (manuais, bulas comerciais e genéricas da ANVISA/SUS 
 
 ---
 
+## ⬇️ Baixar Última Versão (Direto)
+
+Os links abaixo apontam **sempre automaticamente para a versão mais recente** (sem precisar procurar nas abas do GitHub):
+
+| Sistema | Download Direto (Última Versão) | Observação |
+| :--- | :--- | :--- |
+| 🪟 **Windows (x64)** | [**Baixar TaVivo_Windows.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Windows.zip) | Já inclui Python portátil + Vulkan/CPU |
+| 🐧 **Linux (x64 / WSL2)** | [**Baixar TaVivo_Linux.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Linux.zip) | GPU Vulkan (NVIDIA/AMD/Intel) + CPU |
+| 🍎 **macOS (Apple Silicon / Intel)** | [**Baixar TaVivo_macOS.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_macOS.zip) | Aceleração Metal automática |
+
+> 💡 **Quer ajudar a melhorar o TaVivo?** Abra uma [**Issue / Request**](https://github.com/diogoparadox15-prog/TaVivo/issues) sugerindo novos manuais, correções ou faça um **Fork / Pull Request** diretamente pelo código deste repositório!
+
+---
+
 ## ☕ Pague um café (Doação em Bitcoin)
 
 Se esta ferramenta offline puder ajudar você ou sua família em uma hora difícil, considere apoiar o desenvolvimento:
@@ -66,7 +80,7 @@ Se esta ferramenta offline puder ajudar você ou sua família em uma hora difíc
 
 | Componente | Tecnologia / Conteúdo | Função |
 | :--- | :--- | :--- |
-| **Motor IA Local** | `llama.cpp` + `LFM3-Omni-2B-Q4_K_M.gguf` + `mmproj` | Chat multimodal (texto + câmera/fotos) na porta `9931` |
+| **Motor IA Local** | `llama.cpp` + `LFM3-Omni-2B-Uncensored-abliterated-Q4_K_M.gguf` + `mmproj` | Chat multimodal (texto + câmera/fotos) na porta `9931` |
 | **Auto-Benchmark** | `tavivo_bench.py` (cache em `tavivo_hw.json`) | Detecta RAM, CPU e GPU na 1ª execução (piso seguro para 8 GB RAM) |
 | **Interface Web** | `servidor_tavivo.py` (dual-stack IPv6/IPv4) | UI familiar com temas **X**, **WhatsApp** e **Branco** na porta `9876` |
 | **Biblioteca Offline** | `index.sqlite` (SQLite FTS5 BM25) | Manuais reais indexados (medicina, bulas, psicologia, mecânica, rádio, Bíblia) |
