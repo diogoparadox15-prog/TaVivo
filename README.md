@@ -6,7 +6,7 @@
 
 ![Status](https://img.shields.io/badge/Modo-100%25%20Offline-00a884?style=for-the-badge)
 ![Modelo](https://img.shields.io/badge/Motor%20IA-LFM3--Omni--2B-1d9bf0?style=for-the-badge)
-![Biblioteca](https://img.shields.io/badge/Biblioteca-209%20Manuais%20%7C%201.470%20Passagens-6366f1?style=for-the-badge)
+![Biblioteca](https://img.shields.io/badge/Biblioteca-Manuais%20Reais%20de%20Sobreviv%C3%AAncia-6366f1?style=for-the-badge)
 ![Sistemas](https://img.shields.io/badge/SO-Windows%20%7C%20Linux%20%7C%20macOS-334155?style=for-the-badge)
 ![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-f59e0b?style=for-the-badge)
 
@@ -66,7 +66,7 @@ Se esta ferramenta offline puder ajudar você ou sua família em uma hora difíc
 | **Motor IA Local** | `llama.cpp` + `LFM3-Omni-2B-Q4_K_M.gguf` + `mmproj` | Chat multimodal (texto + câmera/fotos) na porta `9931` |
 | **Auto-Benchmark** | `tavivo_bench.py` (cache em `tavivo_hw.json`) | Detecta RAM, CPU e GPU na 1ª execução (piso seguro para 8 GB RAM) |
 | **Interface Web** | `servidor_tavivo.py` (dual-stack IPv6/IPv4) | UI familiar com temas **X**, **WhatsApp** e **Branco** na porta `9876` |
-| **Biblioteca Offline** | `index.sqlite` (SQLite FTS5 BM25) | **209 documentos / 1.470 passagens** com citações clicáveis |
+| **Biblioteca Offline** | `index.sqlite` (SQLite FTS5 BM25) | Manuais reais indexados (medicina, bulas, psicologia, mecânica, rádio, Bíblia) |
 | **Geo Offline** | `tavivo_geo.py` + `geo.sqlite` | **5.571 municípios (IBGE)** + **51 pontos de rios** (Haversine) |
 | **Segurança & Triagem** | Trava Visual + Cartão Vermelho + Resumo SAMU | Bloqueia chutes perigosos e gera ficha clínica rápida |
 
