@@ -59,6 +59,8 @@ Escolha o pacote do seu sistema — **download gratuito, sem cadastro e sem pega
 | 🤖 **Android 9 ou superior** | `TaVivo_Android.apk` | Android 9+ · 8 GB RAM | Tudo incluso no `.apk` (Samsung One UI, Xiaomi HyperOS/MIUI, Motorola e compatíveis) |
 
 > 💡 **Dica de Preparação:** Baixe hoje, teste com calma e guarde uma cópia em um pendrive de 4 GB. Quando a rede cair, já será tarde demais para baixar.
+>
+> 🔒 **Bloqueio de instalação no Android (fora da Play Store):** se o Google Play Protect avisar sobre fonte não verificada, toque em **Mais detalhes → Instalar assim mesmo**. Em celulares **Samsung (One UI 6+)**, desative temporariamente o **Bloqueador Automático** (*Configurações → Segurança e privacidade*) para instalar. Se já tinha uma versão anterior instalada, desinstale a antiga antes de instalar a nova.
 
 ---
 

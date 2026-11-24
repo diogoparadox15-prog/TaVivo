@@ -127,8 +127,15 @@ chmod +x tavivo_mac.sh bin/llama-server
 
 ### 🤖 Android 9 ou superior (Samsung One UI, Xiaomi HyperOS/MIUI, Motorola e compatíveis)
 1. Baixe **`TaVivo_Android.apk`** direto da página de Releases (não precisa de Play Store).
-2. Toque no arquivo e permita *"Instalar apps desconhecidos"* quando o Android solicitar.
+2. Toque no arquivo para instalar.
 3. Abra o **TaVivo Offline**: o modelo de I.A. já vem embutido dentro do aplicativo — na primeira abertura ele se prepara sozinho em alguns segundos e já funciona como um chat 100% offline, sem copiar nenhum arquivo extra!
+
+> **🔒 O celular bloqueou a instalação por ser fora da Play Store? Veja como liberar:**
+> - **Aviso do Google Play Protect (*"App bloqueado / fonte não verificada"*):** toque em **Mais detalhes** → **Instalar assim mesmo**.
+> - **Permissão de fonte desconhecida:** se o sistema disser que o navegador/gerenciador de arquivos não tem permissão, toque em **Configurações** → ative **Permitir desta fonte** e volte para concluir.
+> - **Samsung (One UI 6+ — Bloqueador Automático):** se a instalação for impedida logo no início, vá em **Configurações → Segurança e privacidade → Bloqueador Automático**, desative temporariamente, instale o `TaVivo_Android.apk` e reative depois se desejar.
+> - **Xiaomi (HyperOS / MIUI):** ao tocar no `.apk`, aguarde a contagem regressiva de segurança e toque em **OK / Instalar mesmo assim**.
+> - **Atualizando de uma versão anterior do TaVivo:** se aparecer *"App não instalado"* ou conflito de pacote, desinstale a versão antiga primeiro e instale o novo `.apk`.
 
 ---
 
