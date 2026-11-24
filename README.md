@@ -48,7 +48,7 @@ Escolha o pacote do seu sistema — **download gratuito, sem cadastro e sem depe
 | 🪟 **Windows (10/11 x64)** | [**Baixar TaVivo_Windows.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Windows.zip) | 8 GB RAM | 1 clique (`TaVivo.bat`) — tudo portátil incluso |
 | 🐧 **Linux (Ubuntu e compatíveis — x64)** | [**Baixar TaVivo_Linux.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Linux.zip) | 8 GB RAM | Aceleração GPU Vulkan + CPU automático |
 | 🍎 **macOS (Apple Silicon / Intel)** | [**Baixar TaVivo_macOS.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_macOS.zip) | 8 GB RAM | Aceleração Metal automática |
-| 🤖 **Android (`arm64-v8a`)** | [**Baixar TaVivo_Android.apk**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Android.apk) | Android 9+ · 8 GB RAM | **Pacote `.apk` separado** (sem Play Store) com biblioteca offline + suporte ao motor IA local |
+| 🤖 **Android 9+** | [**Baixar TaVivo_Android.apk**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Android.apk) | 8 GB RAM | **Tudo incluso no `.apk`** (Samsung One UI, Xiaomi HyperOS/MIUI, Motorola e compatíveis — sem Play Store) |
 
 > 💡 **Dica:** Baixe hoje, teste com calma e guarde uma cópia em um pendrive de 4 GB. Quando a rede cair, já será tarde para baixar.
 
@@ -58,7 +58,7 @@ Escolha o pacote do seu sistema — **download gratuito, sem cadastro e sem depe
 
 | Novidade | O Que Muda Na Prática |
 | :--- | :--- |
-| 🤖 **Pacote Android `.apk` Separado** | Agora você leva o TaVivo no bolso em celulares Android (`arm64`, 8 GB+ RAM), sem Play Store e sem assinatura. |
+| 🤖 **App Android Completo (`.apk`)** | Agora você leva o TaVivo no bolso em celulares **Android 9 ou superior** (Samsung One UI, Xiaomi HyperOS/MIUI, Motorola e compatíveis com 8 GB+ RAM), sem Play Store e sem assinatura. |
 | 🎒 **Checklist Interativo "Fim do Mundo"** | Gerencie 6 kits prontos (**EDC, Mochila 72h, Abrigo em Casa 15–90d, Carro, Farmácia de Guerra e Ferramentas/Faraday**) com barra de prontidão (`%`), **alerta de validade** (vencido / vence em 30 dias), itens próprios e backup JSON. |
 | 📲 **Modo PWA 100% Offline** | Instale na tela inicial pelo navegador para abrir manuais e checklists instantaneamente sem internet. |
 | 🧠 **+8 Manuais de Sabedorias & Ofícios** | Nós/amarrações de resgate, sabão com cinzas, costura/impermeabilização, afiação e cordas vegetais, energia solar 12V, escambo/comunidade, defesa residencial passiva (OpSec) e leitura do tempo/calendário agrícola do Brasil. |
@@ -113,7 +113,7 @@ chmod +x tavivo_mac.sh bin/llama-server
 ./tavivo_mac.sh
 ```
 
-### 🤖 Android (`arm64-v8a` — Tudo Incluso no `.apk`)
+### 🤖 Android 9 ou superior (Samsung One UI, Xiaomi HyperOS/MIUI, Motorola e compatíveis)
 1. Baixe **`TaVivo_Android.apk`** direto da página de Releases (não precisa de Play Store).
 2. Toque no arquivo e permita *"Instalar apps desconhecidos"* quando o Android solicitar.
 3. Abra o **TaVivo Offline**: o modelo de I.A. já vem embutido dentro do aplicativo — na primeira abertura ele se prepara sozinho em alguns segundos e já funciona como um chat 100% offline, sem copiar nenhum arquivo extra!

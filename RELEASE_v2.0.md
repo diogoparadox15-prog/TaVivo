@@ -6,7 +6,7 @@
 
 ![Offline](https://img.shields.io/badge/Modo-100%25%20Offline-00a884?style=for-the-badge)
 ![Sistemas](https://img.shields.io/badge/Desktop-Windows%20%7C%20Linux%20%7C%20macOS-334155?style=for-the-badge)
-![Android](https://img.shields.io/badge/Mobile-Android%20APK%20(arm64)-1d9bf0?style=for-the-badge)
+![Android](https://img.shields.io/badge/Mobile-Android%209%2B%20APK-1d9bf0?style=for-the-badge)
 ![RAM](https://img.shields.io/badge/Requisito-A%20partir%20de%208%20GB%20RAM-f59e0b?style=for-the-badge)
 
 </div>
@@ -22,7 +22,7 @@
 
 A v2.0 é a maior atualização da história do TaVivo. Ampliamos drasticamente o conhecimento prático de sobrevivência, adicionamos ferramentas interativas de preparação e levamos o TaVivo para o bolso:
 
-- 🤖 **Novo Suporte a Android (`.apk`):** leve o TaVivo no seu celular Android (aparelhos `arm64` com 8 GB de RAM ou mais), 100% independente de lojas e sem internet.
+- 🤖 **Novo App Android Completo (`.apk`):** leve o TaVivo no seu celular **Android 9 ou superior** (compatível com **Samsung One UI, Xiaomi HyperOS/MIUI, Motorola, Google Pixel** e outros com 8 GB de RAM ou mais) — já vem com a I.A. embutida, sem Play Store e sem internet.
 - 📲 **Modo PWA 100% Offline:** instale direto na tela inicial pelo navegador para consultas ultrarrápidas mesmo sem sinal.
 - 🎒 **Checklist Interativo "Fim do Mundo" + Controle de Validade:** gerencie seus kits reais (**EDC de Bolso, Mochila 72h, Abrigo em Casa 15–90 dias, Carro, Farmácia de Guerra e Ferramentas/Faraday**) com barra de prontidão, alertas automáticos de itens vencidos ou perto de vencer, itens personalizados e backup em JSON.
 - 📚 **+32 Novos Manuais Práticos de Sobrevivência (agora são 248 documentos em 21 fontes):**
@@ -56,7 +56,7 @@ Escolha o pacote do seu sistema — **download gratuito, sem cadastro e sem pega
 | 🪟 **Windows (10 / 11 x64)** | `TaVivo_Windows.zip` | 8 GB RAM · 4 GB livres | 1 clique (`TaVivo.bat`), tudo portátil incluso |
 | 🐧 **Linux (Ubuntu e compatíveis — x64)** | `TaVivo_Linux.zip` | 8 GB RAM · 4 GB livres | Aceleração GPU Vulkan + fallback CPU automático |
 | 🍎 **macOS (Apple Silicon / Intel)** | `TaVivo_macOS.zip` | 8 GB RAM · 4 GB livres | Aceleração Metal automática |
-| 🤖 **Android (`arm64-v8a`)** | `TaVivo_Android.apk` | Android 9+ · 8 GB RAM | App nativo com biblioteca offline + suporte ao motor IA local |
+| 🤖 **Android 9 ou superior** | `TaVivo_Android.apk` | Android 9+ · 8 GB RAM | Tudo incluso no `.apk` (Samsung One UI, Xiaomi HyperOS/MIUI, Motorola e compatíveis) |
 
 > 💡 **Dica de Preparação:** Baixe hoje, teste com calma e guarde uma cópia em um pendrive de 4 GB. Quando a rede cair, já será tarde demais para baixar.
 
