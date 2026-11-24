@@ -86,13 +86,16 @@
     themeBtn.textContent = THEME_LABELS[next];
   });
 
+  const isTouchMobile = () =>
+    window.matchMedia && window.matchMedia("(max-width: 720px), (pointer: coarse)").matches;
+
   // Pop-up inicial de acolhimento
   if (welcomeModal && typeof welcomeModal.showModal === "function") {
     welcomeModal.showModal();
   }
   enterTerminalBtn.addEventListener("click", () => {
     welcomeModal.close();
-    inputEl.focus();
+    if (!isTouchMobile()) inputEl.focus();
   });
 
   // Modal Sobre & Licenças + Fontes da Base
@@ -553,6 +556,7 @@
     if (!text && imagesToSend.length === 0) return;
 
     inputEl.value = "";
+    if (isTouchMobile()) inputEl.blur();
     pendingImages = [];
     renderPreviews();
 
@@ -693,7 +697,7 @@
       sendBtn.textContent = "Enviar";
       sendBtn.classList.remove("stop-mode");
       sendBtn.disabled = false;
-      inputEl.focus();
+      if (!isTouchMobile()) inputEl.focus();
     }
   });
 

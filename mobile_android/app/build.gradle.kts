@@ -12,8 +12,8 @@ android {
         applicationId = "com.tavivo.app"
         minSdk = 28
         targetSdk = 34
-        versionCode = 6
-        versionName = "2.0.4"
+        versionCode = 7
+        versionName = "2.0.5"
 
         ndk {
             abiFilters += "arm64-v8a"
@@ -21,7 +21,7 @@ android {
 
         externalNativeBuild {
             cmake {
-                cppFlags += listOf("-std=c++17", "-O3")
+                cppFlags += listOf("-std=c++17", "-O3", "-march=armv8.2-a+dotprod+fp16")
                 arguments += listOf(
                     "-DANDROID_STL=c++_shared",
                     "-DBUILD_SHARED_LIBS=OFF",
@@ -32,6 +32,8 @@ android {
                     "-DLLAMA_BUILD_COMMON=OFF",
                     "-DLLAMA_CURL=OFF",
                     "-DLLAMA_OPENSSL=OFF",
+                    "-DGGML_NATIVE=OFF",
+                    "-DGGML_CPU_ARM_ARCH=armv8.2-a+dotprod+fp16",
                     "-DGGML_OPENMP=OFF",
                     "-DGGML_LLAMAFILE=OFF"
                 )
