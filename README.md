@@ -39,6 +39,18 @@ A infraestrutura moderna depende de nuvem, energia e rede — e falha o tempo to
 
 ---
 
+## ☕ Pague um Café (Doação em Bitcoin)
+
+Se esta ferramenta offline puder ajudar você ou sua família em uma hora difícil, considere apoiar o desenvolvimento:
+
+<div align="center">
+  <img src="./app/static/doe_btc.png" alt="QR Code Bitcoin TaVivo" width="180">
+  <br><br>
+  <code>bc1q4fwx7ml5casg3hanr8ep382kwvwzht7hqsl0r7</code>
+</div>
+
+---
+
 ## ⬇️ Baixar Última Versão (Direto)
 
 Escolha o pacote do seu sistema — **download gratuito, sem cadastro e sem depender de lojas**:
@@ -122,18 +134,6 @@ chmod +x tavivo_mac.sh bin/llama-server
 
 ## ⚠️ Aviso Legal
 Antes de utilizar em situações reais ou redistribuir este pacote, leia integralmente o **[AVISO_LEGAL.md](./AVISO_LEGAL.md)**.
-
----
-
-## ☕ Pague um Café (Doação em Bitcoin)
-
-Se esta ferramenta offline puder ajudar você ou sua família em uma hora difícil, considere apoiar o desenvolvimento:
-
-<div align="center">
-  <img src="./app/static/doe_btc.png" alt="QR Code Bitcoin TaVivo" width="180">
-  <br><br>
-  <code>bc1q4fwx7ml5casg3hanr8ep382kwvwzht7hqsl0r7</code>
-</div>
 
 ---
 
