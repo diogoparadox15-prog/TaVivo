@@ -84,7 +84,7 @@ Java_com_tavivo_app_LlamaBridge_nativeGenerate(JNIEnv* env, jobject, jstring jpr
     }
     tokens.resize(nTokens);
 
-    llama_kv_self_clear(g_ctx);
+    llama_memory_clear(llama_get_memory(g_ctx), true);
     llama_batch batch = llama_batch_get_one(tokens.data(), (int)tokens.size());
     if (llama_decode(g_ctx, batch) != 0) {
         return env->NewStringUTF("Erro ao processar prompt no motor local.");
