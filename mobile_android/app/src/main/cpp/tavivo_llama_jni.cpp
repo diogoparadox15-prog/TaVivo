@@ -28,7 +28,6 @@ Java_com_tavivo_app_LlamaBridge_nativeLoadModel(JNIEnv* env, jobject, jstring jp
     if (g_model) { llama_model_free(g_model); g_model = nullptr; }
 
     llama_model_params mparams = llama_model_default_params();
-    mparams.use_mmap = true;
     g_model = llama_model_load_from_file(path, mparams);
     env->ReleaseStringUTFChars(jpath, path);
 
