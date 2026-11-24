@@ -28,10 +28,19 @@ android {
                     "-DLLAMA_BUILD_TESTS=OFF",
                     "-DLLAMA_BUILD_EXAMPLES=OFF",
                     "-DLLAMA_BUILD_SERVER=OFF",
-                    "-DGGML_OPENMP=OFF"
+                    "-DLLAMA_BUILD_TOOLS=OFF",
+                    "-DLLAMA_BUILD_COMMON=OFF",
+                    "-DLLAMA_CURL=OFF",
+                    "-DLLAMA_OPENSSL=OFF",
+                    "-DGGML_OPENMP=OFF",
+                    "-DGGML_LLAMAFILE=OFF"
                 )
             }
         }
+    }
+
+    androidResources {
+        noCompress += listOf("gguf", "sqlite", "json")
     }
 
     buildTypes {

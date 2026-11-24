@@ -113,11 +113,10 @@ chmod +x tavivo_mac.sh bin/llama-server
 ./tavivo_mac.sh
 ```
 
-### 🤖 Android (`arm64-v8a` — Pacote `.apk` Separado)
+### 🤖 Android (`arm64-v8a` — Tudo Incluso no `.apk`)
 1. Baixe **`TaVivo_Android.apk`** direto da página de Releases (não precisa de Play Store).
 2. Toque no arquivo e permita *"Instalar apps desconhecidos"* quando o Android solicitar.
-3. Abra o **TaVivo Offline**: a biblioteca completa de manuais, busca e o **Checklist Fim do Mundo** já funcionam na hora 100% offline.
-4. *(Opcional para ativar a IA gerativa local no celular)*: copie o arquivo do modelo `.gguf` para `Android/data/com.tavivo.app/files/models/` e reabra o app.
+3. Abra o **TaVivo Offline**: o modelo de I.A. já vem embutido dentro do aplicativo — na primeira abertura ele se prepara sozinho em alguns segundos e já funciona como um chat 100% offline, sem copiar nenhum arquivo extra!
 
 ---
 

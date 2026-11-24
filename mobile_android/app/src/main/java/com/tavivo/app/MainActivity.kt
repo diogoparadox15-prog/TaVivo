@@ -8,6 +8,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
+import java.io.FileOutputStream
 import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
@@ -20,13 +21,30 @@ class MainActivity : AppCompatActivity() {
 
         localServer = LocalServer(this, 9876).also { it.start() }
 
-        // Carrega automaticamente o modelo GGUF se estiver na pasta de arquivos do app
+        // Extrai automaticamente o modelo GGUF embutido no APK na 1ª execução e carrega a IA local
         Executors.newSingleThreadExecutor().execute {
-            val modelDir = File(getExternalFilesDir(null), "models")
+            val modelDir = File(filesDir, "models")
             modelDir.mkdirs()
-            val gguf = modelDir.listFiles()?.firstOrNull { it.name.endsWith(".gguf") && !it.name.startsWith("mmproj") }
-            if (gguf != null && gguf.exists()) {
-                LlamaBridge.loadModel(gguf.absolutePath)
+            val targetModel = File(modelDir, "tavivo_model.gguf")
+            if (!targetModel.exists() || targetModel.length() < 10_000_000L) {
+                try {
+                    val tmpFile = File(modelDir, "tavivo_model.gguf.tmp")
+                    assets.open("models/tavivo_model.gguf").use { input ->
+                        FileOutputStream(tmpFile).use { output ->
+                            val buf = ByteArray(1024 * 1024)
+                            while (true) {
+                                val read = input.read(buf)
+                                if (read <= 0) break
+                                output.write(buf, 0, read)
+                            }
+                        }
+                    }
+                    tmpFile.renameTo(targetModel)
+                } catch (_e: Exception) {
+                }
+            }
+            if (targetModel.exists() && targetModel.length() > 10_000_000L) {
+                LlamaBridge.loadModel(targetModel.absolutePath)
             }
         }
 

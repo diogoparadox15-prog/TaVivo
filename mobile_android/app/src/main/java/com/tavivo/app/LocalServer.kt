@@ -242,10 +242,10 @@ class LocalServer(private val context: Context, private val port: Int = 9876) {
 
     private fun fallbackReply(hits: List<OfflineArticle>): String {
         if (hits.isEmpty()) {
-            return "Motor IA local (.gguf) ainda não carregado neste aparelho e nenhum manual exato correspondeu à busca. Importe o arquivo LFM3-Omni-2B .gguf ou pesquise diretamente na Biblioteca Offline."
+            return "Preparando motor de I.A. offline pela primeira vez... aguarde alguns segundos até o indicador ficar verde (🟢) ou pesquise diretamente na Biblioteca Offline."
         }
         val top = hits.first()
-        return "[Modo Biblioteca Offline — importe o modelo .gguf para ativar respostas geradas pela IA]\n\n📖 ${top.title}\n\n${top.text}"
+        return "[Motor de I.A. offline inicializando — exibindo manual direto da biblioteca]\n\n📖 ${top.title}\n\n${top.text}"
     }
 
     private fun parseQueryParam(qs: String, key: String): String {

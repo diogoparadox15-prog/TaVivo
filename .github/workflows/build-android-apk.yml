@@ -39,16 +39,25 @@ jobs:
           cp -r app/static/* mobile_android/app/src/main/assets/www/
           cp AVISO_LEGAL.md mobile_android/app/src/main/assets/www/
 
+      - name: Download GGUF Model into APK assets (All-in-One)
+        run: |
+          mkdir -p mobile_android/app/src/main/assets/models
+          curl -fL --retry 3 -o mobile_android/app/src/main/assets/models/tavivo_model.gguf \
+            "https://huggingface.co/mradermacher/LFM3-Omni-2B-Uncensored-GGUF/resolve/main/LFM3-Omni-2B-Uncensored.Q4_K_M.gguf"
+          ls -lh mobile_android/app/src/main/assets/models/tavivo_model.gguf
+
       - name: Clone llama.cpp for Android NDK build
         run: |
           git clone --depth 1 https://github.com/ggml-org/llama.cpp.git mobile_android/app/src/main/cpp/llama.cpp
 
-      - name: Build Android APK (arm64-v8a)
+      - name: Build Android APK (arm64-v8a All-in-One)
         working-directory: mobile_android
-        run: gradle assembleRelease --no-daemon
+        run: gradle assembleRelease --no-daemon --stacktrace
 
       - name: Rename APK
-        run: cp mobile_android/app/build/outputs/apk/release/app-release.apk TaVivo_Android.apk
+        run: |
+          cp mobile_android/app/build/outputs/apk/release/app-release.apk TaVivo_Android.apk
+          ls -lh TaVivo_Android.apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
