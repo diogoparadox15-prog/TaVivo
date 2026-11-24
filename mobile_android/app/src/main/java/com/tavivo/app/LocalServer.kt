@@ -228,20 +228,45 @@ class LocalServer(private val context: Context, private val port: Int = 9876) {
 
         if (LlamaBridge.isLoaded()) {
             val ctx = if (hits.isNotEmpty()) {
-                hits.joinToString("\n\n") { "### ${it.title}\n${it.text.take(750)}" }
+                hits.joinToString("\n\n") { "### ${it.title}\n${it.text.take(450)}" }
             } else {
-                "(Nenhum manual específico encontrado; responda com segurança e objetividade sem inventar dosagens.)"
+                ""
             }
-            val systemPrompt = "Você é o TaVivo, I.A. de sobrevivência 100% offline. " +
-                "Responda SEMPRE em português do Brasil, de forma curta, prática e em tópicos claros. " +
-                "Use estritamente os manuais do contexto abaixo sem inventar fatos ou dosagens.\n\n" +
-                "CONTEXTO DA BIBLIOTECA:\n$ctx"
+            val systemPrompt = if (ctx.isNotEmpty()) {
+                "Você é o TaVivo, I.A. de sobrevivência 100% offline. " +
+                    "Responda SEMPRE em português do Brasil, de forma curta, direta e em tópicos práticos. " +
+                    "Em dúvidas médicas e dosagens, siga os manuais abaixo sem inventar doses em mg/ml. " +
+                    "Em conhecimento geral, responda normalmente com clareza.\n\n" +
+                    "MANUAIS RELEVANTES:\n$ctx"
+            } else {
+                "Você é o TaVivo, I.A. de sobrevivência 100% offline. " +
+                    "Responda SEMPRE em português do Brasil, de forma curta, direta e prática usando seu conhecimento. " +
+                    "Nunca recuse perguntas gerais dizendo que não está na biblioteca; apenas não invente dosagens médicas em mg/ml."
+            }
+            // Pre-fecha <think></think> para o modelo pular o raciocinio longo e responder na hora
             val chatMlPrompt = "<|im_start|>system\n$systemPrompt<|im_end|>\n" +
                 "<|im_start|>user\n$userMsg<|im_end|>\n" +
-                "<|im_start|>assistant\n"
+                "<|im_start|>assistant\n<think>\n\n</think>\n"
 
             var streamedAny = false
-            LlamaBridge.generateStream(chatMlPrompt, 260) { piece ->
+            var inThink = false
+            LlamaBridge.generateStream(chatMlPrompt, 220) { rawPiece ->
+                var piece = rawPiece
+                if (piece.contains("<think>")) {
+                    inThink = true
+                    piece = piece.substringBefore("<think>")
+                }
+                if (piece.contains("</think>")) {
+                    inThink = false
+                    piece = piece.substringAfter("</think>")
+                }
+                if (inThink) return@generateStream
+                piece = piece.replace("<think>", "").replace("</think>", "")
+                if (piece.isEmpty()) return@generateStream
+                if (!streamedAny) {
+                    piece = piece.trimStart('\n', '\r')
+                    if (piece.isEmpty()) return@generateStream
+                }
                 streamedAny = true
                 sendEvent(JSONObject().put("type", "token").put("text", piece))
             }
