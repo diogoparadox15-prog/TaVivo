@@ -1,5 +1,9 @@
 package com.tavivo.app
 
+interface TokenCallback {
+    fun onToken(piece: String)
+}
+
 object LlamaBridge {
     private var libAvailable = false
 
@@ -14,18 +18,28 @@ object LlamaBridge {
 
     external fun nativeLoadModel(path: String, nThreads: Int): Boolean
     external fun nativeIsLoaded(): Boolean
-    external fun nativeGenerate(prompt: String, maxTokens: Int): String
+    external fun nativeGenerateStream(prompt: String, maxTokens: Int, callback: TokenCallback?): String
 
     fun loadModel(path: String): Boolean {
         if (!libAvailable) return false
-        val threads = (Runtime.getRuntime().availableProcessors() - 1).coerceIn(2, 6)
+        // 4 threads nos cores de performance oferece melhor latência em CPUs ARM64 big.LITTLE
+        val cores = Runtime.getRuntime().availableProcessors()
+        val threads = if (cores >= 6) 4 else (cores - 1).coerceAtLeast(2)
         return nativeLoadModel(path, threads)
     }
 
     fun isLoaded(): Boolean = libAvailable && nativeIsLoaded()
 
-    fun generate(prompt: String, maxTokens: Int = 384): String {
+    fun generateStream(prompt: String, maxTokens: Int = 280, onToken: (String) -> Unit): String {
         if (!isLoaded()) return ""
-        return nativeGenerate(prompt, maxTokens)
+        return nativeGenerateStream(
+            prompt,
+            maxTokens,
+            object : TokenCallback {
+                override fun onToken(piece: String) {
+                    onToken(piece)
+                }
+            }
+        )
     }
 }

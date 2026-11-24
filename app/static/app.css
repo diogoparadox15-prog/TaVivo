@@ -965,3 +965,134 @@ button, input, textarea { font: inherit; color: inherit; }
   background: var(--panel-hover);
   transform: translateY(-1px);
 }
+
+/* Layout otimizado para celular / APK Android */
+@media (max-width: 720px) {
+  body {
+    font-size: 14.5px;
+    line-height: 1.45;
+  }
+  .top {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+  .brand {
+    gap: 7px;
+  }
+  .brand-name {
+    font-size: 15.5px;
+  }
+  .brand-sub {
+    display: none;
+  }
+  .status-bar {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: 11px;
+    gap: 4px;
+    justify-content: flex-end;
+  }
+  .status-bar span:not(.sep) {
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+  .status-bar .sep {
+    display: none;
+  }
+  .controls {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .controls::-webkit-scrollbar {
+    display: none;
+  }
+  .controls .ghost {
+    padding: 4px 9px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .messages {
+    padding: 10px 10px 6px;
+    gap: 8px;
+  }
+  .welcome-inline {
+    padding: 6px 4px;
+    margin: 0 auto;
+  }
+  .welcome-pill-row {
+    gap: 5px;
+    margin-bottom: 6px;
+  }
+  .v2-pill {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+  .welcome-inline h1 {
+    font-size: 20px;
+    margin: 4px 0;
+  }
+  .welcome-inline .subtitle {
+    font-size: 12.5px;
+    margin: 0 0 8px;
+  }
+  .welcome-highlights {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin: 8px 0 10px;
+  }
+  .hl-card {
+    padding: 7px 9px;
+    border-radius: 9px;
+  }
+  .hl-card strong {
+    font-size: 12px;
+  }
+  .hl-card span {
+    font-size: 11px;
+    line-height: 1.25;
+  }
+  .examples {
+    gap: 6px;
+  }
+  .example {
+    padding: 7px 10px;
+    font-size: 12.5px;
+  }
+  .composer {
+    padding: 6px 8px 8px;
+  }
+  .composer-box {
+    padding: 6px 8px;
+  }
+  #input {
+    min-height: 36px;
+    max-height: 100px;
+    font-size: 14.5px;
+  }
+  .composer-actions {
+    margin-top: 4px;
+  }
+  .composer-actions .ghost,
+  .composer-actions .primary {
+    padding: 5px 10px;
+    font-size: 12.5px;
+  }
+  .footnote {
+    display: none;
+  }
+  .dialog,
+  .dialog.wide {
+    width: 95vw;
+    max-width: 95vw;
+    padding: 12px;
+  }
+  .ck-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

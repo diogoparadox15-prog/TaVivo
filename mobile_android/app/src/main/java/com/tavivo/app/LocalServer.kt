@@ -209,7 +209,7 @@ class LocalServer(private val context: Context, private val port: Int = 9876) {
     private fun handleChat(out: OutputStream, body: String) {
         val req = try { JSONObject(body) } catch (_e: Exception) { JSONObject() }
         val userMsg = req.optString("message", "").trim()
-        val hits = searchArticles(userMsg, 3)
+        val hits = searchArticles(userMsg, 2)
 
         val headers = "HTTP/1.1 200 OK\r\n" +
             "Content-Type: text/event-stream; charset=utf-8\r\n" +
@@ -219,19 +219,39 @@ class LocalServer(private val context: Context, private val port: Int = 9876) {
         out.flush()
 
         fun sendEvent(obj: JSONObject) {
-            out.write("data: ${obj}\n\n".toByteArray())
-            out.flush()
+            try {
+                out.write("data: ${obj}\n\n".toByteArray())
+                out.flush()
+            } catch (_e: Exception) {
+            }
         }
 
-        val reply = if (LlamaBridge.isLoaded()) {
-            val ctx = hits.joinToString("\n\n") { "### ${it.title}\n${it.text.take(1200)}" }
-            val prompt = "Você é o TaVivo, I.A. de sobrevivência 100% offline. Responda em português do Brasil de forma objetiva usando o contexto:\n$ctx\n\nPergunta: $userMsg\nResposta:"
-            LlamaBridge.generate(prompt, 384).ifBlank { fallbackReply(hits) }
+        if (LlamaBridge.isLoaded()) {
+            val ctx = if (hits.isNotEmpty()) {
+                hits.joinToString("\n\n") { "### ${it.title}\n${it.text.take(750)}" }
+            } else {
+                "(Nenhum manual específico encontrado; responda com segurança e objetividade sem inventar dosagens.)"
+            }
+            val systemPrompt = "Você é o TaVivo, I.A. de sobrevivência 100% offline. " +
+                "Responda SEMPRE em português do Brasil, de forma curta, prática e em tópicos claros. " +
+                "Use estritamente os manuais do contexto abaixo sem inventar fatos ou dosagens.\n\n" +
+                "CONTEXTO DA BIBLIOTECA:\n$ctx"
+            val chatMlPrompt = "<|im_start|>system\n$systemPrompt<|im_end|>\n" +
+                "<|im_start|>user\n$userMsg<|im_end|>\n" +
+                "<|im_start|>assistant\n"
+
+            var streamedAny = false
+            LlamaBridge.generateStream(chatMlPrompt, 260) { piece ->
+                streamedAny = true
+                sendEvent(JSONObject().put("type", "token").put("text", piece))
+            }
+            if (!streamedAny) {
+                sendEvent(JSONObject().put("type", "token").put("text", fallbackReply(hits)))
+            }
         } else {
-            fallbackReply(hits)
+            sendEvent(JSONObject().put("type", "token").put("text", fallbackReply(hits)))
         }
 
-        sendEvent(JSONObject().put("type", "token").put("text", reply))
         if (hits.isNotEmpty()) {
             val srcArr = JSONArray()
             hits.forEach { srcArr.put(JSONObject().put("id", it.id).put("title", it.title).put("source", it.source)) }
