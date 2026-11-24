@@ -1,35 +1,32 @@
 <div align="center">
 
-# 👍 TaVivo — I.A. de Sobrevivência
+# 👍 TaVivo v2.0 — I.A. de Sobrevivência
 
-**Terminal Offline de Emergência · 100% Local · Sem Internet · A partir de 8 GB de RAM**
+**Terminal Offline de Emergência · 100% Local · Sem Internet · Sem Nuvem · Sem Mensalidade**
 
-![Status](https://img.shields.io/badge/Modo-100%25%20Offline-00a884?style=for-the-badge)
-![Modelo](https://img.shields.io/badge/Motor%20IA-LFM3--Omni--2B-1d9bf0?style=for-the-badge)
-![Biblioteca](https://img.shields.io/badge/Biblioteca-Manuais%20Reais%20de%20Sobreviv%C3%AAncia-6366f1?style=for-the-badge)
-![Sistemas](https://img.shields.io/badge/SO-Windows%20%7C%20Linux%20%7C%20macOS-334155?style=for-the-badge)
-![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-f59e0b?style=for-the-badge)
+![Versão](https://img.shields.io/badge/Vers%C3%A3o-2.0-1d9bf0?style=for-the-badge)
+![Modo](https://img.shields.io/badge/Modo-100%25%20Offline-00a884?style=for-the-badge)
+![Sistemas](https://img.shields.io/badge/SO-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20Android-334155?style=for-the-badge)
+![RAM](https://img.shields.io/badge/Requisito-A%20partir%20de%208%20GB%20RAM-f59e0b?style=for-the-badge)
+![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-6366f1?style=for-the-badge)
 
-[Sobre](#-sobre-o-tavivo) · [Baixar](#-baixar-última-versão-direto) · [O que vem no Kit](#-o-que-o-pacote-carrega) · [Como Iniciar](#-sistemas-suportados-e-como-iniciar-1-clique) · [Como Acessar](#-como-acessar) · [Pague um Café (BTC)](#-pague-um-café-doação-em-bitcoin)
+[⬇️ Baixar Agora](#%EF%B8%8F-baixar-%C3%BAltima-vers%C3%A3o-direto) · [🔥 Novidades v2.0](#-novidades-da-vers%C3%A3o-20) · [📚 O Que Vem no Kit](#-o-que-o-tavivo-entrega) · [🚀 Como Iniciar](#-como-instalar-e-iniciar) · [☕ Doação BTC](#-pague-um-caf%C3%A9-doa%C3%A7%C3%A3o-em-bitcoin)
 
 </div>
 
 ---
 
 > **O mundo vai acabar?** Não sei.  
-> **Terá apagão da internet?** Não sei.  
-> **Terá uma tempestade solar e desligará toda comunicação?** Não sei.  
-> **Alguém vai explodir armamento químico ou atômico?** Também não sei.  
-> **Extraterrestre ou zumbi?** Vai da crença de cada um.  
-> **E se o seu celular perder sinal bem na hora em que você mais precisa?** Pode acontecer hoje mesmo.  
-> **E se você ficar sem o seu ChatGPT para te responder?** É aí que a maioria trava.  
+> **Terá apagão da internet ou queda de energia?** Pode acontecer hoje mesmo.  
+> **E se o seu celular perder sinal bem na hora em que você mais precisa?**  
+> **E se você ficar sem o seu ChatGPT para te responder?** É aí que a maioria trava.
 
-Não é preciso imaginar cenários distantes: recentemente já vimos **sistemas bancários nos EUA e grandes portais de notícias saírem do ar**, **falhas em sistemas de aviação** paralisando voos, **quedas em sistemas meteorológicos** e, no Brasil, instabilidades simultâneas no **Gov.br, no Pix e em operadoras**. A infraestrutura moderna depende de nuvem, energia e rede — e falha o tempo todo.
+A infraestrutura moderna depende de nuvem, energia e rede — e falha o tempo todo. Já vimos bancos, sistemas de aviação, operadoras, Gov.br e Pix saírem do ar simultaneamente.
 
 > [!IMPORTANT]
 > **O mínimo que você precisa ter para sobreviver é um pouco de *brio* e *ferramentas* para diferenciar você de uma ameba.**
 >
-> Pensando nisso, desenvolvi o **TaVivo**: uma I.A. 100% offline que não depende de internet nem de nuvem, projetada para rodar em computadores simples (a partir de **8 GB de RAM**) e ajudar você a sobreviver, agir com segurança e manter a cabeça no lugar quando tudo lá fora falhar.
+> O **TaVivo** é a sua I.A. de emergência **100% offline**: roda localmente em PCs e notebooks simples (a partir de **8 GB de RAM**), cabe em um pendrive de **4 GB** e agora conta também com **pacote `.apk` separado para Android** e **modo PWA Offline**.
 
 ---
 
@@ -42,29 +39,94 @@ Não é preciso imaginar cenários distantes: recentemente já vimos **sistemas 
 
 ---
 
-## 🧭 Sobre o TaVivo
-
-O **TaVivo** é um kit portátil de inteligência artificial de emergência, **100% autônomo e offline**, projetado para rodar localmente em notebooks e PCs a partir de **8 GB de RAM** (sem internet, sem nuvem, sem torres de celular) — cabendo com folga em um pendrive de **4 GB**.
-
-Comecei focando no Brasil (manuais, bulas comerciais e genéricas da ANVISA/SUS e os **5.571 municípios do IBGE**), mas o motor **LFM3-Omni-2B** também entende e responde em **Português, Inglês, Espanhol, Francês, Alemão, Italiano, Japonês, Coreano, Chinês e Árabe** — é só pedir. E, como é um projeto vivo, você pode sugerir melhorias e novos manuais.
-
----
-
 ## ⬇️ Baixar Última Versão (Direto)
 
-Os links abaixo apontam **sempre automaticamente para a versão mais recente** (sem precisar procurar nas abas do GitHub):
+Escolha o pacote do seu sistema — **download gratuito, sem cadastro e sem depender de lojas**:
 
-| Sistema | Download Direto (Última Versão) | Observação |
-| :--- | :--- | :--- |
-| 🪟 **Windows (x64)** | [**Baixar TaVivo_Windows.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Windows.zip) | Já inclui Python portátil + Vulkan/CPU |
-| 🐧 **Linux (x64 / WSL2)** | [**Baixar TaVivo_Linux.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Linux.zip) | GPU Vulkan (NVIDIA/AMD/Intel) + CPU |
-| 🍎 **macOS (Apple Silicon / Intel)** | [**Baixar TaVivo_macOS.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_macOS.zip) | Aceleração Metal automática |
+| Sistema | Pacote de Download Direto | Requisito | Observação |
+| :--- | :--- | :--- | :--- |
+| 🪟 **Windows (10/11 x64)** | [**Baixar TaVivo_Windows.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Windows.zip) | 8 GB RAM | 1 clique (`TaVivo.bat`) — tudo portátil incluso |
+| 🐧 **Linux (Ubuntu e compatíveis — x64)** | [**Baixar TaVivo_Linux.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Linux.zip) | 8 GB RAM | Aceleração GPU Vulkan + CPU automático |
+| 🍎 **macOS (Apple Silicon / Intel)** | [**Baixar TaVivo_macOS.zip**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_macOS.zip) | 8 GB RAM | Aceleração Metal automática |
+| 🤖 **Android (`arm64-v8a`)** | [**Baixar TaVivo_Android.apk**](https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Android.apk) | Android 9+ · 8 GB RAM | **Pacote `.apk` separado** (sem Play Store) com biblioteca offline + suporte ao motor IA local |
 
-> 💡 **Quer ajudar a melhorar o TaVivo?** Abra uma [**Issue / Request**](https://github.com/diogoparadox15-prog/TaVivo/issues) sugerindo novos manuais, correções ou faça um **Fork / Pull Request** diretamente pelo código deste repositório!
+> 💡 **Dica:** Baixe hoje, teste com calma e guarde uma cópia em um pendrive de 4 GB. Quando a rede cair, já será tarde para baixar.
 
 ---
 
-## ☕ Pague um café (Doação em Bitcoin)
+## 🔥 Novidades da Versão 2.0
+
+| Novidade | O Que Muda Na Prática |
+| :--- | :--- |
+| 🤖 **Pacote Android `.apk` Separado** | Agora você leva o TaVivo no bolso em celulares Android (`arm64`, 8 GB+ RAM), sem Play Store e sem assinatura. |
+| 🎒 **Checklist Interativo "Fim do Mundo"** | Gerencie 6 kits prontos (**EDC, Mochila 72h, Abrigo em Casa 15–90d, Carro, Farmácia de Guerra e Ferramentas/Faraday**) com barra de prontidão (`%`), **alerta de validade** (vencido / vence em 30 dias), itens próprios e backup JSON. |
+| 📲 **Modo PWA 100% Offline** | Instale na tela inicial pelo navegador para abrir manuais e checklists instantaneamente sem internet. |
+| 🧠 **+8 Manuais de Sabedorias & Ofícios** | Nós/amarrações de resgate, sabão com cinzas, costura/impermeabilização, afiação e cordas vegetais, energia solar 12V, escambo/comunidade, defesa residencial passiva (OpSec) e leitura do tempo/calendário agrícola do Brasil. |
+| 🩺 **+8 Manuais de Saúde de Campo** | Triagem de múltiplas vítimas (START), feridas infectadas e quando não suturar, talas improvisadas, doenças tropicais, saúde da mulher/pós-parto e Método Canguru, fitoterapia segura (SUS/RENISUS), doses pediátricas por peso e primeiros socorros veterinários. |
+| 🍲 **+8 Manuais de Comida & Longo Prazo** | PANCs brasileiras seguras (ora-pro-nóbis, taioba, beldroega, mandioca), teste universal de comestibilidade, lactofermentação/defumação, charque/pemmican, armazenamento em PET (1–10 anos), brotos em 5 dias, panela térmica (*haybox*) e pão sem fermento comercial (*levain*). |
+| 🛡️ **+8 Manuais de Itens & Proteção** | Banheiro seco em apartamento, gaiola de Faraday caseira (EMP), farmácia de guerra, rotação FIFO e simulado familiar. |
+
+---
+
+## 📚 O Que o TaVivo Entrega
+
+- **I.A. Multimodal 100% Local:** converse por texto ou envie **fotos pela câmera** (caixas de remédio, ferimentos e consultas rápidas) sem nenhum dado sair do seu aparelho.
+- **Biblioteca Real com 248 Documentos (21 Fontes):** medicina de campo, farmacologia Brasil (comerciais e genéricos), psicologia de crise, engenharia/mecânica, rádio off-grid, legislação e **Bíblia Sagrada Católica completa (73 livros)**.
+- **Geografia Offline do Brasil:** base embarcada com os **5.571 municípios do IBGE** e referências hidrográficas sem depender de GPS conectado.
+- **Segurança & Triagem:** Trava Visual antialucinação (bloqueia chutes perigosos em plantas/animais), Cartão Vermelho de emergência e gerador de **Resumo Clínico para SAMU 192 / Bombeiros 193**.
+- **Interface Familiar (3 Temas):** alterne com 1 clique entre os temas **X**, **WhatsApp** e **Branco**.
+- **Multilíngue:** focado no Brasil, mas entende e responde também em Inglês, Espanhol, Francês, Alemão, Italiano e outros idiomas.
+
+<details>
+<summary><strong>📖 Ver todas as áreas cobertas pelos Manuais de Sobrevivência</strong></summary>
+
+- **Primeiros Socorros & Saúde de Campo:** hemorragias, torniquete, RCP, engasgo, queimaduras, parto/pós-parto, Método Canguru, triagem START, feridas infectadas, talas/imobilização, doenças tropicais, doses pediátricas por peso, fitoterapia segura (RENISUS/SUS) e veterinária básica.
+- **Farmacologia Brasil:** resumos de bula, indicações e contraindicações de medicamentos comerciais e genéricos + leitura de caixas de remédio por foto.
+- **Psicologia & Controle Emocional:** técnicas práticas para ansiedade, pânico e estresse em crises (base OMS/OPAS e TCC), acolhimento de crianças e idosos.
+- **Água, Comida & Longo Prazo:** purificação, filtração, SODIS, cloração, PANCs brasileiras seguras, lactofermentação, defumação, charque/pemmican, estoque de grãos em garrafa PET (1–10 anos), brotos em 5 dias, panela térmica (*haybox*) e fermento natural (*levain*).
+- **Sabedorias, Ofícios, Mecânica & Rádio:** nós/amarrações, sabão de cinzas, costura/impermeabilização, energia solar 12V, motores, rádio PX/VHF/SW, Código Q, Morse, LoRa/Meshtastic, defesa residencial passiva (OpSec), gaiola de Faraday (EMP) e legislação de crise.
+- **Fé, Filosofia & Cultura:** Bíblia Sagrada Católica completa (73 livros), clássicos de filosofia/resiliência, Xadrez, Damas e jogos sem internet.
+
+</details>
+
+---
+
+## 🚀 Como Instalar e Iniciar
+
+### 🪟 Windows (10 / 11 — x64)
+1. Extraia **todo** o conteúdo de `TaVivo_Windows.zip` antes de executar.
+2. Dê um duplo clique em **`TaVivo.bat`** (se o SmartScreen aparecer, clique em *Mais informações* → *Executar mesmo assim*).
+3. O navegador abrirá automaticamente em `http://127.0.0.1:9876`.
+
+### 🐧 Linux (Ubuntu e compatíveis — x64)
+```bash
+cd TaVivo_Emergency_Kit
+chmod +x tavivo_linux.sh bin/llama-server
+./tavivo_linux.sh
+```
+
+### 🍎 macOS (Apple Silicon / Intel)
+```bash
+cd TaVivo_Emergency_Kit
+xattr -cr .
+chmod +x tavivo_mac.sh bin/llama-server
+./tavivo_mac.sh
+```
+
+### 🤖 Android (`arm64-v8a` — Pacote `.apk` Separado)
+1. Baixe **`TaVivo_Android.apk`** direto da página de Releases (não precisa de Play Store).
+2. Toque no arquivo e permita *"Instalar apps desconhecidos"* quando o Android solicitar.
+3. Abra o **TaVivo Offline**: a biblioteca completa de manuais, busca e o **Checklist Fim do Mundo** já funcionam na hora 100% offline.
+4. *(Opcional para ativar a IA gerativa local no celular)*: copie o arquivo do modelo `.gguf` para `Android/data/com.tavivo.app/files/models/` e reabra o app.
+
+---
+
+## ⚠️ Aviso Legal
+Antes de utilizar em situações reais ou redistribuir este pacote, leia integralmente o **[AVISO_LEGAL.md](./AVISO_LEGAL.md)**.
+
+---
+
+## ☕ Pague um Café (Doação em Bitcoin)
 
 Se esta ferramenta offline puder ajudar você ou sua família em uma hora difícil, considere apoiar o desenvolvimento:
 
@@ -76,84 +138,9 @@ Se esta ferramenta offline puder ajudar você ou sua família em uma hora difíc
 
 ---
 
-## 📦 O que o pacote carrega
-
-| Componente | Tecnologia / Conteúdo | Função |
-| :--- | :--- | :--- |
-| **Motor IA Local** | `llama.cpp` + `LFM3-Omni-2B-Uncensored-abliterated-Q4_K_M.gguf` + `mmproj` | Chat multimodal (texto + câmera/fotos) na porta `9931` |
-| **Auto-Benchmark** | `tavivo_bench.py` (cache em `tavivo_hw.json`) | Detecta RAM, CPU e GPU na 1ª execução (piso seguro para 8 GB RAM) |
-| **Interface Web** | `servidor_tavivo.py` (dual-stack IPv6/IPv4) | UI familiar com temas **X**, **WhatsApp** e **Branco** na porta `9876` |
-| **Biblioteca Offline** | `index.sqlite` (SQLite FTS5 BM25) | Manuais reais indexados (medicina, bulas, psicologia, mecânica, rádio, Bíblia) |
-| **Geo Offline** | `tavivo_geo.py` + `geo.sqlite` | **5.571 municípios (IBGE)** + **51 pontos de rios** (Haversine) |
-| **Segurança & Triagem** | Trava Visual + Cartão Vermelho + Resumo SAMU | Bloqueia chutes perigosos e gera ficha clínica rápida |
-
-<details>
-<summary><strong>📚 Ver áreas cobertas pelos Manuais Reais de Sobrevivência</strong></summary>
-
-- **Primeiros Socorros & Medicina**: hemorragias, torniquete, RCP, engasgo, queimaduras, parto de emergência, convulsões/PLS, pneumotórax (curativo de 3 pontas), sinais vitais e pressão arterial sem aparelho, anatomia vascular superficial (braço/perna), intoxicação química, lavagem ocular, doenças crônicas sem remédio (hipertensão, diabetes, epilepsia) e cuidados domésticos simples.
-- **Farmacologia Brasil (Comerciais + Genéricos)**: resumos de bula, posologia adulto usual e contraindicações (Analgésicos, Antibióticos, Psiquiatria, Cardiologia, Endocrinologia, Gástricos como Inzelm/Izelm/Omeprazol, Dermatologia e Oftalmologia) + leitura de caixas de remédio por foto.
-- **Psicologia & Controle Emocional em Crises**: técnicas práticas de psicologia para controle da ansiedade, pânico e estresse, enfrentamento de situações de crise (base OMS/OPAS e terapia cognitiva), regulação da respiração, acolhimento de crianças/idosos e triagem em saúde mental.
-- **Sobrevivência, Água & Alimentos**: filtração, método SODIS, alambique solar, cloração, saneamento/latrina, conservação de alimentos sem geladeira (salga, secagem, pote Zeer), caça passiva, pesca, limpeza e preparo seguro de fauna silvestre (peixes, aves, capivara, gambá, tatu).
-- **Engenharia, Mecânica, Rádio & Legislação**: roldanas/alavancas, eletricidade/baterias 12V, motores (gasolina, etanol, carburador, injeção, câmbio, diesel e carros elétricos/híbridos), rádio PX/VHF/SW, Código Q, Morse, LoRa/Meshtastic, apps offline (BitChat, Briar), CF/88 (Estado de Defesa, Estado de Sítio, GLO) e Lei Marcial.
-- **Bíblia, Filosofia & Cultura**: **Bíblia Sagrada Católica completa** (Ave Maria — 73 livros indexados por capítulo), George Orwell (*1984* e *A Revolução dos Bichos*), Olavo de Carvalho, Napoleon Hill, *O Caibalion*, Estoicismo, Xadrez, Damas e jogos sem internet.
-
-</details>
-
----
-
-## ⚠️ Atenção — Leia o Aviso Legal
-
-Antes de utilizar em situações reais ou redistribuir este pacote, leia integralmente o **[AVISO_LEGAL.md](./AVISO_LEGAL.md)** (limitações do modelo de IA compacto, riscos de identificação visual de plantas/animais, isenção de responsabilidade médica e canal de remoção por direitos autorais).
-
----
-
-## 🚀 Sistemas Suportados e Como Iniciar (1 Clique)
-
-### 🪟 Windows (10 / 11 — x64)
-1. Extraia **todo** o conteúdo do `.zip` antes de executar (não execute de dentro do arquivo compactado).
-2. Dê um duplo clique em **`TaVivo.bat`**.
-3. Se o Windows exibir o alerta do SmartScreen (*"O Windows protegeu o seu computador"*), clique em **Mais informações** → **Executar mesmo assim**.
-4. O pacote Windows já inclui Python 3.12 portátil embutido — o navegador abrirá em `http://127.0.0.1:9876`.
-
-### 🐧 Linux (x64 / WSL2)
-```bash
-cd TaVivo_Emergency_Kit
-chmod +x tavivo_linux.sh bin/llama-server
-./tavivo_linux.sh
-```
-O navegador abrirá em `http://localhost:9876` (ou `http://127.0.0.1:9876`).
-
-### 🍎 macOS (Apple Silicon / Intel)
-```bash
-cd TaVivo_Emergency_Kit
-xattr -cr .
-chmod +x tavivo_mac.sh bin/llama-server
-./tavivo_mac.sh
-```
-> O `xattr -cr .` desbloqueia os binários portáteis no Gatekeeper na primeira execução. A versão macOS ativa aceleração **Metal (`-ngl 99`)** automaticamente.
-
----
-
-## 🔌 Como Acessar
-
-O navegador abre automaticamente ao iniciar, mas caso feche a aba, acesse:
-
-- **Interface Web (TaVivo)**: `http://127.0.0.1:9876` (ou `http://localhost:9876`)
-
----
-
-## 📜 Licenças e Créditos
-
-- **llama.cpp**: Licença MIT
-- **LFM3-Omni (Liquid Foundation Models)**: Liquid Open License / Apache 2.0
-- **Motor RAG TaVivo (SQLite FTS5 + GeoOffline)**: Licença MIT
-- **Manuais e Enciclopédias (WikiMed, Wikilivros, Appropedia)**: Creative Commons CC BY-SA 3.0 / 4.0 e Domínio Público (FEMA, CDC, OMS/OPAS)
-- **Python Standalone (Windows)**: PSF License
-
----
-
 <div align="center">
 
-**Construído por Capitain Of Cruzades.**
+**Construído por Capitain Of Cruzades.**  
+*Quer sugerir novos manuais ou melhorias? Abra uma [Issue](https://github.com/diogoparadox15-prog/TaVivo/issues) ou envie um Pull Request.*
 
 </div>

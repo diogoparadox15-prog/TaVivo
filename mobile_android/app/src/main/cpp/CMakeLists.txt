@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.22.1)
+project("tavivo_llama")
+
+set(LLAMA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/llama.cpp")
+
+if(EXISTS "${LLAMA_DIR}/CMakeLists.txt")
+    add_subdirectory("${LLAMA_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/llama_build")
+    add_library(tavivo_llama SHARED tavivo_llama_jni.cpp)
+    target_compile_definitions(tavivo_llama PRIVATE HAVE_LLAMA_CPP=1)
+    target_include_directories(tavivo_llama PRIVATE "${LLAMA_DIR}/include" "${LLAMA_DIR}/ggml/include")
+    target_link_libraries(tavivo_llama llama log)
+else()
+    message(WARNING "llama.cpp nao encontrado em ${LLAMA_DIR}; compilando stub offline.")
+    add_library(tavivo_llama SHARED tavivo_llama_jni.cpp)
+    target_link_libraries(tavivo_llama log)
+endif()

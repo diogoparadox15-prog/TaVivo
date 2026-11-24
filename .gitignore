@@ -1,10 +1,25 @@
-models/*.gguf
-bin/
-python/
-_staging_deps/
-dist/
+# Modelos pesados e pacotes de release (publicar via GitHub Releases, não no Git)
+*.gguf
+*.zip
+*.apk
+*.aab
+*.ipa
 downloads/
-tavivo_hw.json
-*.log
+dist/
+TaVivo_Emergency_Kit/dist/
+TaVivo_Emergency_Kit/_staging_deps/
+TaVivo_Emergency_Kit/models/
+TaVivo_Emergency_Kit/bin/
+
+# Python / caches locais
 __pycache__/
 *.pyc
+*.pyo
+TaVivo_Emergency_Kit/tavivo_hw.json
+
+# Android / Gradle build outputs e clone temporário do llama.cpp
+mobile_android/.gradle/
+mobile_android/build/
+mobile_android/app/build/
+mobile_android/app/src/main/cpp/llama.cpp/
+mobile_android/local.properties

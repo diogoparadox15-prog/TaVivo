@@ -34,6 +34,7 @@ CORE_FILES = [
     "tavivo_bench.py",
     "servidor_tavivo.py",
     "preparar_pacote.py",
+    "atualizar_biblioteca.py",
 ]
 
 CORE_DIRS = [

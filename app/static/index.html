@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#192734">
   <title>TaVivo — Terminal Offline</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/svg+xml" href="/static/icon.svg">
   <link rel="stylesheet" href="/static/app.css">
 </head>
 <body>
@@ -26,6 +29,7 @@
     </div>
 
     <nav class="controls">
+      <button id="checklist-btn" class="ghost accent-outline" type="button" title="Checklist interativo de kits de sobrevivência e validades">🎒 Kits</button>
       <button id="donate-btn" class="ghost accent-outline" type="button" title="Apoiar o projeto TaVivo">Doe</button>
       <button id="new-chat-btn" class="ghost" type="button" title="Iniciar nova conversa">Nova Conversa</button>
       <button id="theme-btn" class="ghost" type="button" title="Alternar tema claro/escuro">Tema</button>
@@ -39,16 +43,39 @@
 
       <div id="messages" class="messages">
         <div id="welcome-inline" class="welcome-inline">
+          <div class="welcome-pill-row">
+            <span class="v2-pill">v2.0 · 100% Offline</span>
+            <span class="v2-pill">248 Manuais</span>
+            <span class="v2-pill">PC &amp; Android</span>
+          </div>
           <h1>I.A. de Sobrevivência</h1>
           <p class="subtitle">
-            Consulte manuais médicos, primeiros socorros, purificação de água e procedimentos de emergência
-            100% offline. Respostas baseadas em Manuais Reais de Sobrevivência.
+            Consulte manuais de saúde de campo, sabedorias práticas, comida de longo prazo, kits de emergência
+            e farmacologia 100% offline — sem internet e sem nuvem.
           </p>
+          <div class="welcome-highlights">
+            <div class="hl-card">
+              <strong>🧠 Sabedorias &amp; Ofícios</strong>
+              <span>Nós, sabão de cinzas, energia solar 12V, rádio e OpSec</span>
+            </div>
+            <div class="hl-card">
+              <strong>🩺 Saúde de Campo</strong>
+              <span>Triagem START, talas, pediatria por peso e fitoterapia SUS</span>
+            </div>
+            <div class="hl-card">
+              <strong>🍲 Comida &amp; Estoque</strong>
+              <span>PANCs seguras, fermentação, charque, PET 10 anos e haybox</span>
+            </div>
+            <button type="button" class="hl-card hl-action" id="welcome-open-checklist">
+              <strong>🎒 Checklist Fim do Mundo</strong>
+              <span>6 kits prontos + controle de validade → Abrir agora</span>
+            </button>
+          </div>
           <div class="examples">
             <button type="button" class="example">Como purificar água barrenta ou contaminada sem filtro comercial?</button>
-            <button type="button" class="example">Quais os primeiros socorros para queimadura de segundo grau?</button>
-            <button type="button" class="example">Faltou energia: por quanto tempo os alimentos da geladeira são seguros?</button>
-            <button type="button" class="example">Como estancar uma hemorragia grave em um membro?</button>
+            <button type="button" class="example">Como montar um banheiro seco em apartamento sem água (Bug-In)?</button>
+            <button type="button" class="example">Qual a dose pediátrica de paracetamol em gotas por kg de peso?</button>
+            <button type="button" class="example">Como armazenar arroz e feijão em garrafa PET por até 10 anos?</button>
           </div>
         </div>
       </div>
@@ -263,6 +290,35 @@
     </div>
   </dialog>
 
+  <!-- Modal Checklist Fim do Mundo -->
+  <dialog id="checklist-modal" class="dialog wide" aria-labelledby="checklist-modal-title">
+    <div class="dialog-head">
+      <h2 id="checklist-modal-title">🎒 Checklist Fim do Mundo &amp; Controle de Validade</h2>
+      <button id="close-checklist" class="ghost icon" type="button" aria-label="Fechar">✕</button>
+    </div>
+    <div class="ck-progress-wrap">
+      <div id="checklist-summary" class="ck-summary">Prontidão Geral: 0%</div>
+      <div class="ck-bar"><div id="checklist-bar-fill" class="ck-bar-fill"></div></div>
+    </div>
+    <div id="checklist-tabs" class="ck-tabs"></div>
+    <p id="checklist-kit-desc" class="meta" style="margin: 6px 0 8px;"></p>
+    <div id="checklist-list" class="ck-list"></div>
+    <form id="checklist-add-form" class="ck-add-form">
+      <input id="checklist-add-input" type="text" placeholder="Adicionar item personalizado neste kit..." required>
+      <input id="checklist-add-expiry" type="date" title="Validade (opcional)">
+      <button type="submit" class="primary">+ Item</button>
+    </form>
+    <div class="modal-footer">
+      <div class="media-actions">
+        <button id="checklist-export-btn" class="ghost" type="button">Exportar JSON</button>
+        <button id="checklist-import-btn" class="ghost" type="button">Importar JSON</button>
+        <input id="checklist-import-file" type="file" accept="application/json" hidden>
+      </div>
+      <button id="ok-checklist" class="primary" type="button">Fechar</button>
+    </div>
+  </dialog>
+
   <script src="/static/app.js"></script>
+  <script src="/static/checklist.js"></script>
 </body>
 </html>

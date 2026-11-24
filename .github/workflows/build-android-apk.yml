@@ -1,0 +1,65 @@
+name: Build TaVivo Android APK
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout TaVivo
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Gradle 8.7
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Setup Android SDK & NDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install NDK and CMake
+        run: sdkmanager "ndk;26.3.11579264" "cmake;3.22.1"
+
+      - name: Sync Web UI & Offline Library into Android assets
+        run: |
+          python3 atualizar_biblioteca.py
+          mkdir -p mobile_android/app/src/main/assets/www
+          cp -r app/static/* mobile_android/app/src/main/assets/www/
+          cp AVISO_LEGAL.md mobile_android/app/src/main/assets/www/
+
+      - name: Clone llama.cpp for Android NDK build
+        run: |
+          git clone --depth 1 https://github.com/ggml-org/llama.cpp.git mobile_android/app/src/main/cpp/llama.cpp
+
+      - name: Build Android APK (arm64-v8a)
+        working-directory: mobile_android
+        run: gradle assembleRelease --no-daemon
+
+      - name: Rename APK
+        run: cp mobile_android/app/build/outputs/apk/release/app-release.apk TaVivo_Android.apk
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TaVivo_Android_APK
+          path: TaVivo_Android.apk
+
+      - name: Publish Release & APK on Tag
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: TaVivo ${{ github.ref_name }}
+          body_path: RELEASE_v2.0.md
+          files: TaVivo_Android.apk

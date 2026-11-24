@@ -38,6 +38,7 @@ MIME_TYPES = {
     ".svg": "image/svg+xml",
     ".png": "image/png",
     ".json": "application/json; charset=utf-8",
+    ".webmanifest": "application/manifest+json; charset=utf-8",
     ".txt": "text/plain; charset=utf-8",
 }
 
@@ -81,6 +82,12 @@ class TaVivoHandler(BaseHTTPRequestHandler):
 
         if path == "/" or path == "/index.html":
             return self._send_file(os.path.join(STATIC_DIR, "index.html"))
+
+        if path == "/manifest.json":
+            return self._send_file(os.path.join(STATIC_DIR, "manifest.json"))
+
+        if path == "/sw.js":
+            return self._send_file(os.path.join(STATIC_DIR, "sw.js"))
 
         if path.startswith("/static/"):
             rel = path[len("/static/"):].lstrip("/")
