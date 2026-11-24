@@ -3,8 +3,9 @@ package com.tavivo.app
 import android.content.Context
 import org.json.JSONArray
 import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import java.io.BufferedInputStream
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
 import java.io.OutputStream
 import java.net.InetAddress
 import java.net.ServerSocket
@@ -96,18 +97,48 @@ class LocalServer(private val context: Context, private val port: Int = 9876) {
         }.sortedByDescending { it.first }.take(limit).map { it.second }
     }
 
+    private fun readHttpLine(input: InputStream): String? {
+        val baos = ByteArrayOutputStream()
+        var prev = -1
+        while (true) {
+            val b = input.read()
+            if (b == -1) {
+                return if (baos.size() == 0) null else baos.toString("UTF-8")
+            }
+            if (b == '\n'.code) {
+                val bytes = baos.toByteArray()
+                val len = if (prev == '\r'.code && bytes.isNotEmpty()) bytes.size - 1 else bytes.size
+                return String(bytes, 0, len, Charsets.UTF_8)
+            }
+            baos.write(b)
+            prev = b
+        }
+    }
+
+    private fun readExactBytes(input: InputStream, length: Int): ByteArray {
+        val buf = ByteArray(length)
+        var read = 0
+        while (read < length) {
+            val r = input.read(buf, read, length - read)
+            if (r <= 0) break
+            read += r
+        }
+        return if (read == length) buf else buf.copyOf(read)
+    }
+
     private fun handleClient(socket: Socket) {
         socket.use { s ->
-            val reader = BufferedReader(InputStreamReader(s.getInputStream()))
+            s.soTimeout = 15000
+            val input = BufferedInputStream(s.getInputStream())
             val out = s.getOutputStream()
-            val requestLine = reader.readLine() ?: return
+            val requestLine = readHttpLine(input) ?: return
             val parts = requestLine.split(" ")
             if (parts.size < 2) return
             val method = parts[0]
             val fullPath = parts[1]
             var contentLength = 0
             while (true) {
-                val line = reader.readLine() ?: break
+                val line = readHttpLine(input) ?: break
                 if (line.isEmpty()) break
                 if (line.lowercase().startsWith("content-length:")) {
                     contentLength = line.substringAfter(":").trim().toIntOrNull() ?: 0
@@ -118,14 +149,10 @@ class LocalServer(private val context: Context, private val port: Int = 9876) {
             val queryStr = fullPath.substringAfter("?", "")
 
             if (method == "POST" && pathOnly == "/api/chat") {
-                val buf = CharArray(contentLength.coerceAtMost(2 * 1024 * 1024))
-                var read = 0
-                while (read < buf.size) {
-                    val r = reader.read(buf, read, buf.size - read)
-                    if (r <= 0) break
-                    read += r
-                }
-                handleChat(out, String(buf, 0, read))
+                val safeLen = contentLength.coerceIn(0, 4 * 1024 * 1024)
+                val bodyBytes = readExactBytes(input, safeLen)
+                s.soTimeout = 0
+                handleChat(out, String(bodyBytes, Charsets.UTF_8))
                 return
             }
 
