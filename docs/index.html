@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TaVivo Offline — I.A. de Sobrevivência 100% Sem Internet (PC &amp; Android)</title>
+  <meta name="description" content="E se você ficar sem o ChatGPT quando a internet cair? O TaVivo é uma I.A. de sobrevivência 100% offline para Windows, Linux, macOS e Android (8 GB RAM): primeiros socorros, bulas Brasil, comida, sabedorias e checklists sem internet.">
+  <meta name="keywords" content="TaVivo Offline, IA de sobrevivência, IA offline, ChatGPT offline, sobrevivencialismo, primeiros socorros offline, Android APK IA local, kit emergência, sem internet">
+  <link rel="canonical" href="https://diogoparadox15-prog.github.io/TaVivo/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diogoparadox15-prog.github.io/TaVivo/">
+  <meta property="og:title" content="TaVivo Offline — I.A. de Sobrevivência 100% Sem Internet">
+  <meta property="og:description" content="Roda direto no seu PC ou celular Android (8 GB RAM) sem 1 byte de internet. 248 manuais reais, Checklist Fim do Mundo e I.A. local gratuita.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TaVivo Offline — I.A. de Sobrevivência Sem Internet">
+  <meta name="twitter:description" content="Quando a energia cai e o sinal some, o TaVivo continua respondendo. Grátis para Windows, Linux, macOS e Android.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TaVivo Offline — I.A. de Sobrevivência",
+    "operatingSystem": "Windows, Linux, macOS, Android",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "softwareVersion": "2.0",
+    "url": "https://github.com/diogoparadox15-prog/TaVivo",
+    "description": "Terminal de inteligência artificial de emergência e sobrevivência 100% offline com 248 manuais em português, checklist interativo e suporte a PC e Android."
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0f1720;
+      --panel: #16212d;
+      --panel-2: #1c2a38;
+      --line: #2c3e50;
+      --text: #eff3f4;
+      --muted: #93a4b5;
+      --accent: #1d9bf0;
+      --ok: #00ba7c;
+      --warn: #f59e0b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #182738 0%, var(--bg) 55%);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 60px; }
+    .hero { text-align: center; padding: 28px 12px 24px; }
+    .badge-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .pill {
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+      padding: 4px 12px; border-radius: 999px; background: var(--panel-2);
+      border: 1px solid var(--accent); color: var(--accent);
+    }
+    .pill.ok { border-color: var(--ok); color: var(--ok); }
+    h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 8px 0 12px; }
+    .lead { max-width: 720px; margin: 0 auto 20px; color: var(--muted); font-size: 18px; }
+    .quote-box {
+      max-width: 760px; margin: 18px auto 26px; padding: 16px 20px;
+      background: var(--panel); border-left: 4px solid var(--accent); border-radius: 10px;
+      text-align: left; font-size: 15px;
+    }
+    .cta-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px; margin: 24px 0;
+    }
+    .btn {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 15px 14px; border-radius: 12px; text-decoration: none; font-weight: 700;
+      background: var(--panel); color: var(--text); border: 1px solid var(--line);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); background: var(--panel-2); }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn.primary:hover { background: #1a8cd8; }
+    .btn small { font-weight: 500; font-size: 12px; opacity: .88; margin-top: 3px; }
+    .section-title { font-size: 22px; margin: 38px 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 16px; color: var(--text); }
+    .card p { margin: 0; font-size: 14px; color: var(--muted); }
+    .verses {
+      text-align: center; margin: 32px 0; padding: 18px; background: var(--panel);
+      border: 1px solid var(--line); border-radius: 12px; font-style: italic; color: var(--muted);
+    }
+    .footer { text-align: center; margin-top: 40px; font-size: 13.5px; color: var(--muted); }
+    .footer a { color: var(--accent); }
+    code { background: var(--panel-2); padding: 3px 8px; border-radius: 6px; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge-row">
+        <span class="pill ok">100% Offline · Sem Internet</span>
+        <span class="pill">Versão 2.0 Gratuita</span>
+        <span class="pill">PC &amp; Android 9+</span>
+      </div>
+      <h1>👍 TaVivo Offline — I.A. de Sobrevivência</h1>
+      <p class="lead">
+        E se o sinal cair, a energia acabar e você ficar sem o seu ChatGPT bem na hora em que mais precisa?
+        O <strong>TaVivo</strong> roda direto no seu computador ou celular Android (8 GB RAM+), sem nuvem e sem mensalidade.
+      </p>
+
+      <div class="quote-box">
+        <strong>O mundo vai acabar?</strong> Não sei. <strong>Terá apagão da internet?</strong> Não sei.
+        <strong>Seu celular pode perder sinal hoje mesmo?</strong> Pode.<br>
+        O mínimo que você precisa para sobreviver é um pouco de <em>brio</em> e <em>ferramentas</em> — baixe hoje e guarde em um pendrive de 4 GB ou no seu celular.
+      </div>
+
+      <div class="cta-grid">
+        <a class="btn primary" href="https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Android.apk">
+          🤖 Baixar Android (.apk)
+          <small>Android 9+ · Samsung, Xiaomi, Motorola (8 GB RAM)</small>
+        </a>
+        <a class="btn" href="https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Windows.zip">
+          🪟 Baixar Windows (.zip)
+          <small>Windows 10/11 x64 · 1 clique (TaVivo.bat)</small>
+        </a>
+        <a class="btn" href="https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_Linux.zip">
+          🐧 Baixar Linux (.zip)
+          <small>Ubuntu e compatíveis (x64)</small>
+        </a>
+        <a class="btn" href="https://github.com/diogoparadox15-prog/TaVivo/releases/latest/download/TaVivo_macOS.zip">
+          🍎 Baixar macOS (.zip)
+          <small>Apple Silicon / Intel (Metal)</small>
+        </a>
+      </div>
+    </section>
+
+    <h2 class="section-title">🔥 O Que Vem no TaVivo v2.0 (248 Manuais Reais)</h2>
+    <section class="cards">
+      <article class="card">
+        <h3>🧠 Sabedorias &amp; Ofícios</h3>
+        <p>Nós de resgate, sabão com cinzas, costura/impermeabilização, energia solar 12V, rádio off-grid, escambo e defesa residencial passiva.</p>
+      </article>
+      <article class="card">
+        <h3>🩺 Saúde de Campo &amp; Bulas</h3>
+        <p>Primeiros socorros, triagem START, talas improvisadas, farmacologia Brasil (comerciais e genéricos), doses pediátricas por peso e fitoterapia SUS.</p>
+      </article>
+      <article class="card">
+        <h3>🍲 Comida &amp; Longo Prazo</h3>
+        <p>Purificação de água, PANCs brasileiras seguras, fermentação, charque, armazenamento em garrafa PET (1–10 anos), brotos em 5 dias e panela térmica.</p>
+      </article>
+      <article class="card">
+        <h3>🎒 Checklist Fim do Mundo</h3>
+        <p>Ferramenta interativa para 6 kits (EDC, Mochila 72h, Casa 15–90d, Carro, Farmácia e Faraday) com alertas de validade + Bíblia completa e 5.571 municípios IBGE.</p>
+      </article>
+    </section>
+
+    <section class="verses">
+      “Ainda que eu atravesse o vale escuro, nada temerei, pois estais comigo.” — <strong>(Salmo 22/23, 4)</strong><br>
+      “Alegrai-vos na esperança, sede pacientes na tribulação e perseverai na oração.” — <strong>(Romanos 12, 12)</strong>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Código-fonte e Releases oficiais:
+        <a href="https://github.com/diogoparadox15-prog/TaVivo">github.com/diogoparadox15-prog/TaVivo</a>
+      </p>
+      <p>☕ Apoie o projeto (Bitcoin): <code>bc1q4fwx7ml5casg3hanr8ep382kwvwzht7hqsl0r7</code></p>
+      <p><strong>Construído por Capitain Of Cruzades.</strong></p>
+    </footer>
+  </main>
+</body>
+</html>
